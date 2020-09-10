@@ -29,3 +29,23 @@ var subsets = function(nums) {
   return results;
     
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var subsets = function(nums) {
+    var results = [[]];
+    var a = [];
+    var helper = (n) => {
+        for (let i = n; i < nums.length; ++i) {
+            a.push(nums[i]);
+            helper(i + 1);
+            results.push([...a]);
+            a.pop();
+        }
+    }
+    helper(0);
+    return results;
+};
+
