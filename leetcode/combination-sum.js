@@ -27,8 +27,7 @@ var combinationSum = function (candidates, target) {
         helper(i);
       }
 
-      var poppedItem = array.pop();
-      sumValue -= poppedItem;
+      sumValue -= array.pop();
     }
   };
 
